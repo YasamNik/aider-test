@@ -3,7 +3,10 @@ const cors = require('cors');
 const { spawn } = require('child_process');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 
 app.post('/run-docker', (req, res) => {
@@ -16,7 +19,12 @@ app.post('/run-docker', (req, res) => {
         'python', 'app.py'
     ];
 
-    const dockerProcess = spawn('docker', dockerArgs);
+    const dockerProcess = spawn('docker', dockerArgs, {
+      env: {
+        ...process.env,
+        DOCKER_CONFIG: `${process.env.HOME}/.docker` // Use Windows-style path if needed
+      }
+    });
     let output = '';
 
     dockerProcess.stdout.on('data', (data) => {

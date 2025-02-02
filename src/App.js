@@ -10,8 +10,9 @@ function App() {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:3001/run-docker', {
-        method: 'POST'
+      const response = await fetch('/run-docker', {
+        method: 'POST',
+        credentials: 'include'
       });
       
       if (!response.ok) {
