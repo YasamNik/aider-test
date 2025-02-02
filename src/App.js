@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Real-ESRGAN Processing</h1>
+      <h1>Upscale Processing</h1>
       <button 
         onClick={handleRunDocker}
         disabled={isProcessing}
