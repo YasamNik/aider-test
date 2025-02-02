@@ -13,7 +13,7 @@ app.post('/run-docker', (req, res) => {
         '--gpus', 'all',
         '-v', `${process.cwd()}/in:/app/inputs`,
         '-v', `${process.cwd()}/out:/app/results`,
-        'real-esrgan-cuda124',
+        'upscale-docker-image',
         'python', 'inference_realesrgan.py',
         '-n', 'sem_train_masked',
         '12345334'
