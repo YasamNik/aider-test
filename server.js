@@ -13,8 +13,8 @@ app.post('/run-docker', (req, res) => {
     const dockerArgs = [
         'run',
         '--rm',
-        '-v', `C:\\Users\\Alexander\\Documents\\Real-Esrgan_docker_test\\inputs:/app/inputs`,
-        '-v', `C:\\Users\\Alexander\\Documents\\Real-Esrgan_docker_test\\results:/app/results`,
+        '-v', `C:\\Users\\Alexander\\Documents\\upscale_docker_test\\inputs:/app/in`,
+        '-v', `C:\\Users\\Alexander\\Documents\\upscale_docker_test\\results:/app/out`,
         '699c9f490b12',
         'python', 'app.py'
     ];
