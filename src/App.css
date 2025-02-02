@@ -32,3 +32,9 @@
   color: #dc3545;
   margin-top: 15px;
 }
+
+.status-message {
+  margin-top: 20px;
+  color: #17a2b8;
+  font-style: italic;
+}

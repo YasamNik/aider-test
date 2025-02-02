@@ -38,6 +38,9 @@ function App() {
         {isProcessing ? 'Processing...' : 'Start Enhancement'}
       </button>
       {error && <p className="error-message">Error: {error}</p>}
+      <div className="status-message">
+        {isProcessing ? 'Processing in progress...' : 'Ready to process'}
+      </div>
     </div>
   );
 }
