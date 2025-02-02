@@ -10,13 +10,10 @@ app.post('/run-docker', (req, res) => {
     const dockerArgs = [
         'run',
         '--rm',
-        '--gpus', 'all',
-        '-v', `${process.cwd()}/in:/app/inputs`,
-        '-v', `${process.cwd()}/out:/app/results`,
-        'upscale-docker-image',
-        'python', 'inference_realesrgan.py',
-        '-n', 'sem_train_masked',
-        '12345334'
+        '-v', `C:\\Users\\Alexander\\Documents\\Real-Esrgan_docker_test\\inputs:/app/inputs`,
+        '-v', `C:\\Users\\Alexander\\Documents\\Real-Esrgan_docker_test\\results:/app/results`,
+        '699c9f490b12',
+        'python', 'app.py'
     ];
 
     const dockerProcess = spawn('docker', dockerArgs);
